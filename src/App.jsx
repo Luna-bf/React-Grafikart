@@ -1,6 +1,7 @@
-const greeting = 'Hello World !'
-const congrats = 'Congratulations, that\'s awesome !'
-const awesome = 'awesome'
+const greeting = 'Hello World !';
+const congrats = 'Congratulations, that\'s awesome !';
+const awesome = 'awesome';
+const myStyle = {color: 'red', backgroundColor: 'pink', textAlign: 'center'}; {/*On peut aussi le faire avec une variable*/}
 
 function App() {
   return <> {/* On peux aussi déclarer une balise vide comme élément racine */}
@@ -12,6 +13,15 @@ function App() {
     <p>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid eveniet iste, blanditiis itaque dolor unde esse? Recusandae cum officia sapiente tempore mollitia, distinctio amet, porro numquam nisi cupiditate magni maiores repudiandae minima ut earum odit eos fuga sed omnis saepe iure necessitatibus. Nihil, incidunt rem soluta quis voluptate eum nobis.  
     </p>
+
+    <p style={{color: 'blue', backgroundColor: 'gold'}}>Blue paragraph</p>
+    
+    {/*
+      - Si on veut changer le style, on doit passer les valeurs sous forme d'objet
+      - Attention, le background-color devra toujours être écrit en camelCase, c'est à dire : backgroundColor
+    */}
+
+    <div style={myStyle}>Le style intégré par une variable myStyle</div>
 
     <input type="radio" /> {/*Les balises doivent toujours être fermées */}
   </>
