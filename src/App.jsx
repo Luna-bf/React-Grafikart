@@ -4,6 +4,12 @@ const awesome = 'awesome';
 const myStyle = {color: 'red', backgroundColor: 'pink', textAlign: 'center'}; {/*On peut aussi intégrer du style avec une variable*/}
 const showTitle = true;
 const showAnotherTitle = false;
+const tasks = [
+  'Comprendre React',
+  'Suivre un cours Node.js',
+  'Savoir utiliser la base de donnée MongoDB',
+  'Créer un petit projet qui combine les trois',
+];
 
 function App() {
 
@@ -30,8 +36,12 @@ function App() {
 
 
     {/*Autre exemple avec l'équivalent ternaire de if else*/}
-    {showAnotherTitle ? <h6 style={{color: 'midnightblue'}}>Mon booléen est égal à true</h6> : <p>showAnotherTitle est égal à false</p>} {/*Si (?) showAnotherTitle est égal à true alors tu me montre le titre h6, sinon (:) tu me montre le paragraphe*/}
-
+    {
+    
+      showAnotherTitle ? <h6 style={{color: 'midnightblue'}}>Mon booléen est égal à true</h6> :
+      <p>showAnotherTitle est égal à false</p>
+    
+    } {/*Si (?) showAnotherTitle est égal à true alors tu me montre le titre h6, sinon (:) tu me montre le paragraphe*/}
 
     <p>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid eveniet iste, blanditiis itaque dolor unde esse? Recusandae cum officia sapiente tempore mollitia, distinctio amet, porro numquam nisi cupiditate magni maiores repudiandae minima ut earum odit eos fuga sed omnis saepe iure necessitatibus. Nihil, incidunt rem soluta quis voluptate eum nobis.  
@@ -47,6 +57,10 @@ function App() {
     <div style={myStyle}>Le style intégré par une variable myStyle</div>
 
     <input type="radio" /> {/*Les balises doivent toujours être fermées */}
+
+    <ul>
+      {tasks.map(task => (<li key={task}>{task}</li>))} {/*map() permet de parcourir un tableau, ici je lui demande de parcourir le tableau tasks et de créer une balise li pour chaque éléments parcourus*/}
+    </ul> {/*La console retourne une erreur car il est impératif d'avoir une clé pour identifier les différents éléments du tableau. Ici, ma clé sera tout simplement le nom de ma tâche*/}
 
   </>
 }
