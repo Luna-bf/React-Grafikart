@@ -21,10 +21,14 @@ function App() {
   }
 
   return <> {/* On peux aussi déclarer une balise vide comme élément racine */}
-    
-    <h1 id="title" className="good" onClick={handleClick}>Bonjour les gens</h1> {/* className = class */}
-    
-    <h2>{greeting}</h2> {/*Pour interpoler des variables entre des balises, il faut déclarer son nom dans des accolades {}*/}
+
+    <h1 id='title' className='good' onClick={handleClick}>Bonjour les gens</h1> {/* className = class */}
+
+    <Title>Mon composant</Title> {/*Mon composant peut se trouver n'importe tout tant qu'il est dans le return, sinon il ne sera pas détectée par le navigateur*/}
+                                 {/*Ici, le texte 'Mon composant est l'enfant du composant Title, il affiche malgré tout ce que la function Title
+                                 lui demande d'afficher, soit 'Bonjour les gens'*/}
+
+    <Paragraph color='powderblue' />
 
     <h3 className={awesome}>{congrats}</h3> {/*On aussi interpoler des variables dans les attributs, exemple : className*/}
 
@@ -56,13 +60,23 @@ function App() {
 
     <div style={myStyle}>Le style intégré par une variable myStyle</div>
 
-    <input type="radio" /> {/*Les balises doivent toujours être fermées */}
+    <input type='radio' /> {/*Les balises doivent toujours être fermées */}
 
     <ul>
       {tasks.map(task => (<li key={task}>{task}</li>))} {/*map() permet de parcourir un tableau, ici je lui demande de parcourir le tableau tasks et de créer une balise li pour chaque éléments parcourus*/}
     </ul> {/*La console retourne une erreur car il est impératif d'avoir une clé pour identifier les différents éléments du tableau. Ici, ma clé sera tout simplement le nom de ma tâche*/}
 
   </>
+}
+
+function Title ({children}) { {/*Ici, je peux demander à Title d'afficher son enfant, soit le texte 'Mon composant' que je lui ai donné si-dessus*/}
+  return <h2>{children}</h2>; {/*Au lieu de la variable greeting, je lui demande donc d'afficher son enfant : 'Mon composant'*/}
+}
+
+function Paragraph ({color}) { {/*On peut donner un paramètre 'props', qui contiendra un objet contenant la propriété color*/}
+  return <p style={{color: color}}>Un composant paragraphe</p>; {/*Je pourrais mettre la propriété color dans l'attribut style afin de simplifier le code, 
+                                                                 la propriété de l'attribut style retournera la couleur actuelle de mon paragraphe, 
+                                                                 ce qui me permet de changer la couleur de mon paragraphe plus facilement*/}
 }
 
 export default App
