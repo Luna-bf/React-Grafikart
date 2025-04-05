@@ -51,7 +51,7 @@ function App() {
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid eveniet iste, blanditiis itaque dolor unde esse? Recusandae cum officia sapiente tempore mollitia, distinctio amet, porro numquam nisi cupiditate magni maiores repudiandae minima ut earum odit eos fuga sed omnis saepe iure necessitatibus. Nihil, incidunt rem soluta quis voluptate eum nobis.  
     </p>
 
-    <p style={{color: 'blue', backgroundColor: 'gold'}}>Blue paragraph</p>
+    <p style={{color: 'blue', backgroundColor: 'gold'}}>Blue paragraph with a golden background</p>
     
     {/*
       - Si on veut changer le style, on doit passer les valeurs sous forme d'objet
