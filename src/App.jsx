@@ -28,7 +28,7 @@ function App() {
                                  {/*Ici, le texte 'Mon composant est l'enfant du composant Title, il affiche malgré tout ce que la function Title
                                  lui demande d'afficher, soit 'Bonjour les gens'*/}
 
-    <Paragraph color='powderblue' />
+    <Paragraph color='powderblue' /> {/*Les composants personnalisés comme celui-ci seront toujours écrit en PascalCase*/}
 
     <h3 className={awesome}>{congrats}</h3> {/*On aussi interpoler des variables dans les attributs, exemple : className*/}
 
@@ -55,7 +55,7 @@ function App() {
     
     {/*
       - Si on veut changer le style, on doit passer les valeurs sous forme d'objet
-      - Attention, le background-color devra toujours être écrit en camelCase, c'est à dire : backgroundColor
+      - Attention, les propriétés devront toujours être écrites en camelCase, par exemple : background-color devient backgroundColor
     */}
 
     <div style={myStyle}>Le style intégré par une variable myStyle</div>
